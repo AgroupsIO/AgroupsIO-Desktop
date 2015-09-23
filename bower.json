@@ -18,5 +18,9 @@
     "app/vendor",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "hammerjs": "~2.0.4",
+    "Materialize": "materialize#~0.97.1"
+  }
 }

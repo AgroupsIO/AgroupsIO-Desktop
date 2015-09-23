@@ -1,5 +1,5 @@
 export var greet = function () {
-    return 'Hello World!';
+    return 'Agroups.IO';
 };
 
 export var bye = function () {

@@ -6,11 +6,6 @@
 
     <link href="./stylesheets/main.css" rel="stylesheet" type="text/css">
 
-    <script src="lib/electron_boilerplate/env_config.js"></script>
-    <script src="lib/electron_boilerplate/context_menu.js"></script>
-    <script src="lib/electron_boilerplate/external_links.js"></script>
-
-    <script src="app.js"></script>
 </head>
 <body>
 
@@ -23,6 +18,19 @@
             You are in <strong id="env-name"></strong> environment.
         </p>
     </div>
+
+    <script>
+        window.$ = window.jQuery = require('./vendor/jquery/dist/jquery.min.js');
+        window.Hammer = require('./vendor/hammerjs/hammer.min.js');
+    </script>
+
+    <script src="./vendor/Materialize/dist/js/materialize.js"></script>
+
+    <script src="./lib/electron_boilerplate/env_config.js"></script>
+    <script src="./lib/electron_boilerplate/context_menu.js"></script>
+    <script src="./lib/electron_boilerplate/external_links.js"></script>
+
+    <script src="./app.js"></script>
 
 </body>
 </html>
