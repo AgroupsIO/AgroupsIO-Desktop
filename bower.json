@@ -1,0 +1,22 @@
+{
+  "name": "AgroupsIO-Desktop",
+  "version": "0.0.0",
+  "homepage": "https://github.com/AgroupsIO/AgroupsIO-Desktop",
+  "authors": [
+    "Jonatas Freitas <jonatasfreitasv@gmail.com>"
+  ],
+  "moduleType": [
+    "amd",
+    "es6",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/vendor",
+    "test",
+    "tests"
+  ]
+}
