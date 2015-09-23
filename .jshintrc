@@ -34,13 +34,12 @@
   "newcap"        : true,     // Require capitalization of all constructor functions e.g. `new F()`.
   "noarg"         : true,     // Prohibit use of `arguments.caller` and `arguments.callee`.
   "noempty"       : true,     // Prohibit use of empty blocks.
-  "nonew"         : true,     // Prohibit use of constructors for side-effects.
+  "nonew"         : false,     // Prohibit use of constructors for side-effects.
   "plusplus"      : true,     // Prohibit use of `++` & `--`.
   "regexp"        : true,     // Prohibit `.` and `[^...]` in regular expressions.
   "undef"         : true,     // Require all non-global variables be declared before they are used.
   "strict"        : true,     // Require `use strict` pragma in every file.
   "trailing"      : true,     // Prohibit trailing whitespaces.
-  "nonew"         : false,    // Tolerate new object without var
 
   // == Relaxing Options ================================================
   //
@@ -52,7 +51,7 @@
   "boss"          : false,    // Tolerate assignments inside if, for & while. Usually conditions & loops are for comparison, not assignments.
   "debug"         : false,    // Allow debugger statements e.g. browser breakpoints.
   "eqnull"        : false,    // Tolerate use of `== null`.
-  "es5"           : false,    // Allow EcmaScript 5 syntax.
+  "es6"           : true,    // Allow EcmaScript 5 syntax.
   "esnext"        : true,    // Allow ES.next specific features such as `const` and `let`.
   "evil"          : false,    // Tolerate use of `eval`.
   "expr"          : false,    // Tolerate `ExpressionStatement` as Programs.
