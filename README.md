@@ -1,7 +1,7 @@
 # IN PROGRESS, NOT HAVE ANY VERSION
 
 # About Agroups.io
-[![Join the chat at https://gitter.im/AgroupsIO/AgroupsIO-Desktop](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AgroupsIO/AgroupsIO-Desktop?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)   [![Build wi https://gitter.im/AgroupsIO/AgroupsIO-Desktop](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AgroupsIO/AgroupsIO-Desktop?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/AgroupsIO/AgroupsIO-Desktop](https://badges.gitter.im/Join%20Chat.svg)]()   [![Build with http://gulpjs.com/](http://img.shields.io/badge/built%20with-gulp-red.svg)]()
 
 The open-source project Agroups.io is a desktop application for OSX, Linux and Windows developed entirely with javascript based on *[Electron](http://electron.atom.io/)*.
 
