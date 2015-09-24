@@ -1,5 +1,7 @@
 # IN PROGRESS, NOT HAVE ANY VERSION
 
+[![Join the chat at https://gitter.im/AgroupsIO/AgroupsIO-Desktop](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AgroupsIO/AgroupsIO-Desktop?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 # About Agroups.io
 [![Join the chat at https://gitter.im/jonatasfreitasv/agroups.io](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jonatasfreitasv/agroups.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/jonatasfreitasv/agroups.io.svg?branch=master)](https://travis-ci.org/jonatasfreitasv/agroups.io) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
