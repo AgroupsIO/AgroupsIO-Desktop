@@ -6,15 +6,6 @@
     "gulp": "^3.9.0",
     "gulp-less": "^3.0.3",
     "gulp-util": "^3.0.6",
-    "jasmine-core": "^2.3.4",
-    "karma": "^0.13.10",
-    "karma-atomshell-launcher": "0.0.2",
-    "karma-babel-preprocessor": "^5.2.2",
-    "karma-electron-launcher": "0.0.2",
-    "karma-jasmine": "^0.3.6",
-    "karma-mocha-reporter": "^1.1.1",
-    "karma-phantomjs-launcher": "^0.2.1",
-    "phantomjs": "^1.9.18",
     "q": "^1.4.1",
     "rollup": "^0.16.1",
     "tree-kill": "^0.1.1",
@@ -30,6 +21,6 @@
     "build": "./node_modules/.bin/gulp build",
     "release": "./node_modules/.bin/gulp release --env=production",
     "start": "node ./tasks/start",
-    "test": "karma start --single-run && node ./tasks/start --env=test"
+    "test": "node ./tasks/start --env=test"
   }
 }
