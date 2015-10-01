@@ -27,9 +27,5 @@ With it you can in a graphical interface manage packages managers like npm (node
 ## Documentation
 - Wireframe *[Moqups](https://moqups.com/jonatasfreitasv@gmail.com/dOHIovDo)*
 
-# Feedback or any question
-- Open issue
-- Send e-mail to *[jonatasfreitasv@gmail.com](mailto:jonatasfreitasv@gmail.com)*
-
 ## Licence
 *[MIT](http://opensource.org/licenses/MIT)*
