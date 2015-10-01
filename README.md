@@ -24,11 +24,7 @@ With it you can in a graphical interface manage packages managers like npm (node
 ##### To build release for OSX, Win and Linux, run:
   - ```npm run release```
 
-## Very hot to do list
-- Logo
-- Landing page to publish builded project to download
-
-## First steps development documentation
+## Documentation
 - Wireframe *[Moqups](https://moqups.com/jonatasfreitasv@gmail.com/dOHIovDo)*
 
 # Feedback or any question
