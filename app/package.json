@@ -10,6 +10,8 @@
     "target": "development"
   },
   "dependencies": {
-    "fs-jetpack": "^0.7.0"
+    "fs-jetpack": "^0.7.0",
+    "jquery": "^2.1.4",
+    "mustache": "^2.1.3"
   }
 }
