@@ -21,6 +21,7 @@
   ],
   "dependencies": {
     "hammerjs": "~2.0.4",
-    "Materialize": "materialize#~0.97.1"
+    "Materialize": "materialize#~0.97.1",
+    "mustache.js": "mustache#~2.1.3"
   }
 }
