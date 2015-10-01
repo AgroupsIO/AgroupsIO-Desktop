@@ -29,8 +29,6 @@ With it you can in a graphical interface manage packages managers like npm (node
 - Landing page to publish builded project to download
 
 ## First steps development documentation
-- Initial mindmap *[Mindmup](https://atlas.mindmup.com/2015/08/7fbf2e602e4d013366c1021a815988ce/agroups_io_/index.html)*
-- Task boards *[Trello](https://trello.com/agroups)*
 - Wireframe *[Moqups](https://moqups.com/jonatasfreitasv@gmail.com/dOHIovDo)*
 
 # Feedback or any question
