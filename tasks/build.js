@@ -19,7 +19,8 @@ var paths = {
         './node_modules/**',
         './vendor/**',
         './lib/**',
-        './**/*.html'
+        './**/*.html',
+        './images/*'
     ]
 };
 

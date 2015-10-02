@@ -8,6 +8,7 @@ var BrowserWindow = require('browser-window');
 var env = require('./lib/electron_boilerplate/env_config');
 var devHelper = require('./lib/electron_boilerplate/dev_helper');
 var windowStateKeeper = require('./lib/electron_boilerplate/window_state');
+var dialog = require('dialog');
 
 var mainWindow;
 
