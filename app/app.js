@@ -17,66 +17,69 @@ var Mustache = require('mustache');
 window.jQuery = window.$ = require('jquery');
 window.Hammer = require('hammerjs');
 
-// Holy crap! This is browser window with HTML and stuff, but I can read
-// here files like it is node.js! Welcome to Electron world :)
-var manifest = jetpack.read('package.json', 'json');
-console.log(manifest);
+// Globals
+window.projectFolder = null;
 
-document.addEventListener('DOMContentLoaded', function() {
+$(document).ready(() => {
 
-    $.get('views/setup.html', function(template) {
-
-        var rendered = Mustache.render(template, {});
-        $('#target').html(rendered);
-
-        if(!localStorage.getItem('name'))
-        {
-            startUp();
-        }
-        else {
-            Materialize.toast(
-                'Hi, good morning '+ localStorage.getItem('name') +' !',
-                4000,
-                'bold black-text white');
-        }
-
-        var project_folder = null;
-        $('#selectFolder').on('click', function(){
-            project_folder = dialog.showOpenDialog(
-                { properties: ['openDirectory']
-                });
-
-            Materialize.toast(project_folder, 4000);
-        });
-
-    });
+    setup.render();
 
 });
 
-function startUp(){
-    $('#agreeModal').openModal({
-        dismissible: false
-    });
+const setup = {
 
-    $('#btnDisagree').on('click', function(){
-        app.quit();
-    });
+    template: jetpack.read('./app/templates/setup.html'),
 
-    $('#btnAgree').on('click', function(){
-        $('#agreeModal').closeModal();
-        $('#nameModal').openModal({
+    name: localStorage.getItem('name'),
+    setName: name => localStorage.setItem('name', name),
+
+    render: function() {
+        $('#target').html(Mustache.render(this.template));
+        this.name ?  this.hello() : this.firstAcess();
+        this.events();
+    },
+
+    setProjectFolder: function(){
+        projectFolder = dialog.showOpenDialog(
+            { properties: ['openDirectory'] }
+        );
+    },
+
+    events: function() {
+        $('#selectFolder').on('click', () => setup.setProjectFolder());
+    },
+
+    firstAcess: function () {
+
+        $('#agreeModal').openModal({
             dismissible: false
         });
-    });
 
-    $('#btnContinue').on('click', function(){
-        $('#nameModal').closeModal();
+        $('#btnDisagree').on('click', () => app.quit());
 
-        localStorage.setItem('name', $('#firstName').val());
+        $('#btnAgree').on('click',
+            () => {
+                $('#agreeModal').closeModal();
+                $('#nameModal').openModal({
+                    dismissible: false
+                });
+            });
 
+        $('#btnContinue').on('click',
+            () => {
+                $('#nameModal').closeModal();
+                this.setName($('#firstName').val());
+                this.hello();
+            });
+    },
+
+    hello: function() {
+
+        const msg = name => `Hello ${name}, good morning !`;
         Materialize.toast(
-            'Hi, good morning '+ localStorage.getItem('name') +' !',
+            msg(this.name),
             4000,
             'bold black-text white');
-    });
-}
+
+    }
+};
