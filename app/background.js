@@ -42,6 +42,9 @@ app.on('ready', function () {
         mainWindow.openDevTools();
     }
 
+    devHelper.setDevMenu();
+    mainWindow.openDevTools();
+
     mainWindow.on('close', function () {
         mainWindowState.saveState(mainWindow);
     });
