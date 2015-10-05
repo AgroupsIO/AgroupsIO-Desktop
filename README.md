@@ -10,8 +10,6 @@ The open-source project Agroups.io is a desktop application for OSX, Linux and W
 
 With it you can in a graphical interface manage packages managers like npm (node.js), composer (php) and Bower (js). In the future we will also implement the functionality to manage the Grunt and Karma configuration files.
 
-#####The mind-map described below contains all the used stack .
-
 ####Contribute to the Agroups.io, it's yours too.
 
 ## To run and build project:
