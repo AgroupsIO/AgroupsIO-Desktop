@@ -1,10 +1,10 @@
 {
-  "name": "electron-boilerplate",
-  "productName": "Electron Boilerplate",
-  "identifier": "com.example.electron-boilerplate",
-  "description": "Starter for your Electron application. Out of the box ready for serious stuff.",
+  "name": "agroups-io",
+  "productName": "Agroups.IO",
+  "identifier": "com.example.agroups-io",
+  "description": "A open-source desktop GUI app to manage all package managers like a bower, npm and composer.",
   "version": "0.1.0",
-  "author": "Mr Gumby <gumby@sillywalks.com>",
+  "author": "Jonatas Freitas <jonatasfreitasv@gmail.com>",
   "main": "background.js",
   "config": {
     "target": "development"
