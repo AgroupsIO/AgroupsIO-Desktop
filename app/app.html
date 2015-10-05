@@ -11,24 +11,25 @@
 <body>
 
 <div id="target">
-    <div class="preloader-wrapper big active">
-        <div class="spinner-layer spinner-blue-only">
-            <div class="circle-clipper left">
-                <div class="circle"></div>
-            </div>
-            <div class="gap-patch">
-                <div class="circle"></div>
-            </div>
-            <div class="circle-clipper right">
-                <div class="circle"></div>
+    <div class="center">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only center">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-</div>
 
 <script id="setup" type="x-tmpl-mustache">
-    <div id="container" style="display: none;">
+    <div id="setupContainer" class="center" style="display: none;">
         <div class="center">
             <img src="images/agroups-logo.png" width="140" />
             <h1 class="center white-text">Agroups.IO</h1>
@@ -95,6 +96,17 @@
         <div class="modal-content">
             <h3>You are Off-line !</h3>
             <p>This program no have offline mode, connect and return.</p>
+        </div>
+    </div>
+</script>
+
+<script id="setupLoader" type="x-tmpl-mustache">
+    <div id="setupLoaderContainer" class="row" style="display: none;">
+        <div class="div col s8 offset-s2">
+            <p id="loaderText" class="left white-text">...</p>
+            <div class="progress">
+                <div id="setupLoaderProgress" class="determinate" style="width: 0%"></div>
+            </div>
         </div>
     </div>
 </script>
