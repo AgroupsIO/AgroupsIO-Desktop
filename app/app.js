@@ -46,8 +46,6 @@ const setup = {
 
     name: localStorage.getItem('name'),
 
-    setName: name => localStorage.setItem('name', name),
-
     render: function() {
 
         $('#target').html(Mustache.render(this.template));
@@ -73,7 +71,7 @@ const setup = {
         $('#btnContinue').on('click',
             () => {
                 $('#nameModal').closeModal();
-                this.setName($('#firstName').val());
+                localStorage.setItem('name', $('#firstName').val());
                 this.sayHello();
             });
 
@@ -120,16 +118,18 @@ const setup = {
 
     sayHello: function() {
 
-        const now = new Date();
-        const hour = now.getHours();
-        const greeting = hour < 12 ? 'morning' :
-            hour >= 12 && hour <= 17 ? 'afternoon' :
-                hour >= 12 && hour <= 17 ? 'evening' : 'job';
-
-        const msg = name => `Hello ${name}, good ${greeting}! `;
-
         setTimeout(() => {
-            Materialize.toast(msg(this.name), 2000, 'black-text white');
+
+            const now = new Date();
+            const hour = now.getHours();
+            const greeting = hour < 12 ? 'morning' :
+                hour >= 12 && hour <= 17 ? 'afternoon' :
+                    hour >= 12 && hour <= 17 ? 'evening' : 'job';
+
+            const msg = name => `Hello ${name}, good ${greeting}! `;
+
+            Materialize.toast(msg(localStorage.getItem('name')), 2000, 'black-text white');
+
         }, 1000);
 
     },
