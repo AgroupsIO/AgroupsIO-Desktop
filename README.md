@@ -1,14 +1,16 @@
 #### In progress, not have any release.
 
 # Agroups.io
-[![Join the chat at https://gitter.im/AgroupsIO/AgroupsIO-Desktop](https://badges.gitter.im/Join%20Chat.svg)]()   [![Build with http://gulpjs.com/](http://img.shields.io/badge/built%20with-gulp-red.svg)]()
+[![Build with http://gulpjs.com/](http://img.shields.io/badge/built%20with-gulp-red.svg)]()
 
 
 ![Agroups.IO](https://github.com/AgroupsIO/AgroupsIO-Desktop/blob/master/resources/agroups-io-printscreen.png)
 
 The open-source project Agroups.io is a desktop application for OSX, Linux and Windows developed entirely with javascript based on *[Electron](http://electron.atom.io/)*.
 
-With it you can in a graphical interface manage packages managers like npm (node.js), composer (php) and Bower (js). In the future we will also implement the functionality to manage the Grunt and Karma configuration files.
+With it you can in a graphical interface manage packages managers like npm (node.js), composer (php) and Bower (js).
+
+In the future we will also implement the functionality to manage the Grunt and Karma configuration files.
 
 ####Contribute to the Agroups.io, it's yours too.
 
