@@ -111,7 +111,7 @@ export const setup = {
     },
 
     setManagerFiles: function(){
-        project.npm = jetpack.read(project.projectDir + '/package.json', 'json');
+        project.npm.file = jetpack.read(project.projectDir + '/package.json', 'json');
         project.bower = jetpack.read(project.projectDir + '/bower.json', 'json');
         project.composer = jetpack.read(project.projectDir + '/composer.json', 'json');
     },

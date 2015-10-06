@@ -1,10 +1,8 @@
-import { project } from './controllers/project';
-import { setup } from './controllers/setup';
-import { setupLoader } from './controllers/setupLoader';
 
-$(document).ready(() => {
+window.jQuery = window.$ = require('jquery');
 
-    setup.render();
-    !navigator.onLine ? setup.offlineModal() : null;
+$(document).ready(function(){
 
+        console.log('aaa');
+        
 });
