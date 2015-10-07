@@ -21,15 +21,18 @@ var mainWindowState = windowStateKeeper('main', {
 app.on('ready', function () {
 
     mainWindow = new BrowserWindow({
-        x: mainWindowState.x,
-        y: mainWindowState.y,
         width: mainWindowState.width,
-        height: mainWindowState.height
+        height: mainWindowState.height,
+        center: true,
+        resizable: false,
+        fullscreen: false
     });
 
+    /*
     if (mainWindowState.isMaximized) {
         mainWindow.maximize();
     }
+    */
 
     if (env.name === 'test') {
         mainWindow.loadUrl('file://' + __dirname + '/spec.html');
@@ -39,11 +42,8 @@ app.on('ready', function () {
 
     if (env.name !== 'production') {
         devHelper.setDevMenu();
-        mainWindow.openDevTools();
+        //mainWindow.openDevTools();
     }
-
-    devHelper.setDevMenu();
-    mainWindow.openDevTools();
 
     mainWindow.on('close', function () {
         mainWindowState.saveState(mainWindow);

@@ -6,6 +6,7 @@ window.jQuery = window.$ = require('jquery');
 window.Hammer = require('hammerjs');
 
 import { project } from './project';
+import { dashboard } from './dashboard';
 
 export const setupLoader = {
 
@@ -17,34 +18,14 @@ export const setupLoader = {
         this.load();
     },
 
-    view: function(){
-
-        let view = {
-            npm:[]
-        };
-
-        // TODO: Change array to JSON
-        $.each(project.npm.dependenciesShow, (key, value) => {
-            $.each(value, (k, v) => {
-                view.npm.push(v);
-            });
-        });
-
-        console.log(view);
-
-        return view;
-
-    },
-
     load: function() {
 
-
         this.loadDependencies().then(() => {
-
-            console.log(project);
-
+            this.loadDevDependencies().then(() => {
+                console.log(project);
+                dashboard.render();
+            });
         });
-
 
     },
 
@@ -60,10 +41,14 @@ export const setupLoader = {
     loadDependencies: function(){
 
         var deferred = Q.defer();
+
+        if(!project.npm.file.dependencies) {
+            deferred.resolve();
+            return deferred.promise;
+        }
+
         let totalOfDependencies = Object.keys(
             project.npm.file.dependencies).length;
-
-        totalOfDependencies < 0 ? deferred.resolve() : null;
 
         npm.load((err) => {
 
@@ -99,6 +84,12 @@ export const setupLoader = {
     loadDevDependencies: function(){
 
         var deferred = Q.defer();
+
+        if(!project.npm.file.devDependencies) {
+            deferred.resolve();
+            return deferred.promise;
+        }
+
         let totalOfDependencies = Object.keys(
             project.npm.file.devDependencies).length;
 

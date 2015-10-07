@@ -40,15 +40,28 @@ export const setup = {
 
         $('#btnContinue').on('click',
             () => {
-                $('#nameModal').closeModal();
-                localStorage.setItem('name', $('#firstName').val());
-                this.sayHello();
+                if($('#firstName').val() !== '') {
+                    $('#nameModal').closeModal();
+                    localStorage.setItem('name', $('#firstName').val());
+                    this.sayHello();
+                }
             });
 
         $('#selectFolder').on('click', () => {
             setup.setProjectFolder();
             this.setManagerFiles();
             this.start();
+        });
+
+        $('#firstName').on('keypress', (e) => {
+            if(e.which === 13) {
+                e.preventDefault();
+                if($('#firstName').val() !== '') {
+                    $('#nameModal').closeModal();
+                    localStorage.setItem('name', $('#firstName').val());
+                    this.sayHello();
+                }
+            }
         });
 
     },
