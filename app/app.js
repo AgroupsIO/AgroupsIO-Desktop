@@ -1,8 +1,11 @@
+import { setup } from './controllers/setup';
 
 window.jQuery = window.$ = require('jquery');
+window.Hammer = require('hammerjs');
 
-$(document).ready(function(){
+$(document).ready(() => {
 
-        console.log('aaa');
-        
+  setup.render();
+  !navigator.onLine ? setup.offlineChecker() : null;
+
 });

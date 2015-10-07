@@ -39,6 +39,12 @@ export const setupLoader = {
     load: function() {
 
 
+        this.loadDependencies().then(() => {
+
+            console.log(project);
+
+        });
+
 
     },
 
@@ -54,33 +60,36 @@ export const setupLoader = {
     loadDependencies: function(){
 
         var deferred = Q.defer();
-        let totalOfDependencies = Object.keys(project.npm.file.dependencies).length;
+        let totalOfDependencies = Object.keys(
+            project.npm.file.dependencies).length;
 
-            npm.load((err) => {
+        totalOfDependencies < 0 ? deferred.resolve() : null;
 
-                err ? deferred.reject(new Error(err)) : null;
+        npm.load((err) => {
 
-                $.each(project.npm.file.dependencies, (key, value) => {
-                    npm.commands.show([`${key}@${value.replace('^', '')}`], (err, data) => {
+            err ? deferred.reject(new Error(err)) : null;
 
-                        // TODO: Change array to JSON
-                        !err ? project.npm.dependenciesShow.push(data) :
-                            project.npm.dependenciesShow.push(err);
+            $.each(project.npm.file.dependencies, (key, value) => {
+                npm.commands.show([`${key}@${value.replace('^', '')}`], (err, data) => {
 
-                    });
+                    // TODO: Change array to JSON
+                    !err ? project.npm.dependenciesShow.push(data) :
+                        project.npm.dependenciesShow.push(err);
+
                 });
-
             });
 
-            var resolve = setInterval(() => {
-                this.increment((project.npm.dependenciesShow.length/totalOfDependencies) * 100);
-                this.text(`Load <b>NPM</b> dependencies information - ${project.npm.dependenciesShow.length} / ${totalOfDependencies}`);
+        });
 
-                if(project.npm.dependenciesShow.length === totalOfDependencies){
-                    clearInterval(resolve);
-                    deferred.resolve();
-                }
-            }, 50);
+        var resolve = setInterval(() => {
+            this.increment((project.npm.dependenciesShow.length/totalOfDependencies) * 100);
+            this.text(`Load <b>NPM</b> dependencies information - ${project.npm.dependenciesShow.length} / ${totalOfDependencies}`);
+
+            if(project.npm.dependenciesShow.length === totalOfDependencies){
+                clearInterval(resolve);
+                deferred.resolve();
+            }
+        }, 50);
 
         return deferred.promise;
 
@@ -93,12 +102,14 @@ export const setupLoader = {
         let totalOfDependencies = Object.keys(
             project.npm.file.devDependencies).length;
 
-            npm.load((err) => {
+        totalOfDependencies < 0 ? deferred.resolve() : null;
 
-                err ? deferred.reject(new Error(err)) : null;
+        npm.load((err) => {
 
-                $.each(project.npm.file.devDependencies, (key, value) => {
-                    npm.commands.show([`${key}@${value.replace('^', '')}`],
+            err ? deferred.reject(new Error(err)) : null;
+
+            $.each(project.npm.file.devDependencies, (key, value) => {
+                npm.commands.show([`${key}@${value.replace('^', '')}`],
                     (err, data) => {
 
                         // TODO: Change array to JSON
@@ -106,19 +117,19 @@ export const setupLoader = {
                             project.npm.devDependenciesShow.push(err);
 
                     });
-                });
-
             });
 
-            var resolve = setInterval(() => {
-                this.increment((project.npm.devDependenciesShow.length/totalOfDependencies) * 100);
-                this.text(`Load <b>NPM</b> dev dependencies information - ${project.npm.devDependenciesShow.length} / ${totalOfDependencies}`);
+        });
 
-                if(project.npm.devDependenciesShow.length === totalOfDependencies){
-                    clearInterval(resolve);
-                    deferred.resolve();
-                }
-            }, 50);
+        var resolve = setInterval(() => {
+            this.increment((project.npm.devDependenciesShow.length/totalOfDependencies) * 100);
+            this.text(`Load <b>NPM</b> dev dependencies information - ${project.npm.devDependenciesShow.length} / ${totalOfDependencies}`);
+
+            if(project.npm.devDependenciesShow.length === totalOfDependencies){
+                clearInterval(resolve);
+                deferred.resolve();
+            }
+        }, 50);
 
         return deferred.promise;
 
