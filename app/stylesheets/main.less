@@ -5,6 +5,12 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 h1, h2, h3, h4, h5
@@ -38,6 +44,19 @@ a {
   margin-top: 226px;
 }
 
+#logoHeader{
+  float: left;
+  margin-top: 15px;
+  height: 37px;
+}
+
+#titleHeader{
+  float: left;
+  font-size: 26px;
+  margin-left: 13px;
+  cursor: pointer;
+}
+
 .top-nav {
   padding-left: 18px;
 }
@@ -46,4 +65,20 @@ a {
   position: fixed;
   top: 250px;
   left: 470px;
+}
+
+.top-nav{
+  background-color: #455a64;
+  margin-bottom: 13px;
+}
+
+.dep-collection {
+  padding-bottom: 10px;
+}
+
+.dep-collection li {
+  float: left;
+  width: 312px;
+  margin-left: 10px !important;
+  margin-top: 10px !important;
 }

@@ -124,12 +124,13 @@
 
 </script>
 
-<script id="dashboard" type="x-tmpl-mustache">
+<script id="dashboard" type="text/html">
 
     <header>
             <nav class="top-nav">
                 <div class="nav-wrapper">
-                    <a href="#" class="brand-logo">Logo</a>
+                    <img src="./images/agroups-logo.png" id="logoHeader">
+                    <span id="titleHeader">Agroups.IO</span>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="sass.html">NPM</a></li>
                         <li><a href="badges.html">Bower</a></li>
@@ -144,18 +145,82 @@
         <div class="col s12">
 
             <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
-          <li class="">
-            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-            <div style="display: none;" class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
-          </li>
-          <li class="active">
-            <div class="collapsible-header active"><i class="material-icons">place</i>Second</div>
-            <div style="display: block;" class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
-          </li>
-          <li class="">
-            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-            <div style="display: none;" class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
-          </li>
+                <li>
+                    <div class="collapsible-header">
+                        <i class="material-icons">flip_to_front</i>
+                            <b>Dependencies</b>
+                        <div class="secondary-content">
+                            {{dependenciesShowLength}}
+                        </div>
+                    </div>
+
+                    <div style="display: none;" class="collapsible-body">
+                        <ul class="collection dep-collection">
+
+                            {{#dependenciesShow}}
+
+                                <li class="collection-item">
+
+                                    <div class="row">
+
+                                        <div class="col s12">
+                                            <b>{{name}}</b> - version: {{version}}
+                                        </div>
+
+                                        <div class="col s12">
+                                            {{#repository.url}}
+                                                <a class="external-link" href="{{repository.url}}">
+                                                    <img src="images/github-circled-alt.svg" alt="github" height="30px" />
+                                                </a>
+                                            {{/repository.url}}
+                                        </div>
+
+                                    </div>
+
+                                </li>
+
+                            {{/dependenciesShow}}
+
+                        </ul>
+                    </div>
+
+                </li>
+                <li>
+                    <div class="collapsible-header">
+                        <i class="material-icons">flip_to_back</i>
+                         <b>Dev Dependencies</b>
+                        <span class="secondary-content">
+                            {{devDependenciesShowLength}}
+                        </span>
+                    </div>
+                    <div style="display: none;" class="collapsible-body">
+                        <ul class="collection dep-collection">
+                            {{#devDependenciesShow}}
+
+                                <li class="collection-item">
+
+                                    <div class="row">
+
+                                        <div class="col s12">
+                                            <b>{{name}}</b> - version: {{version}}
+                                        </div>
+
+                                        <div class="col s12">
+                                            {{#repository.url}}
+                                                <a class="external-link" href="{{repository.url}}">
+                                                    <img src="images/github-circled-alt.svg" alt="github" height="30px" />
+                                                </a>
+                                            {{/repository.url}}
+                                        </div>
+
+                                    </div>
+
+                                </li>
+
+                            {{/devDependenciesShow}}
+                        </ul>
+                    </div>
+                </li>
             </ul>
 
         </div>
