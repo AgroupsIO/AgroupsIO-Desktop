@@ -31,7 +31,8 @@ In the future we will also implement the functionality to manage the Grunt and K
   - ```npm run release```
 
 ## Documentation
-- Wireframe *[Moqups](https://moqups.com/jonatasfreitasv@gmail.com/dOHIovDo)*
+- *[Roadmap](https://trello.com/b/IgWdeH1j/agroups-io-roadmap)*
+- *[Wireframe](https://moqups.com/jonatasfreitasv@gmail.com/dOHIovDo)*
 
 ## Licence
 *[MIT](http://opensource.org/licenses/MIT)*
